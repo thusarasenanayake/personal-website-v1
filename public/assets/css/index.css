@@ -99,4 +99,12 @@ body {
 .path {
   color: #e75448;
   font-weight: 800;
+  margin-right: 6px;
+}
+.user-input {
+  padding: 5px 10px 5px 0;
+  outline: 0;
+}
+.css-output p {
+  margin: 0 0 6px 0;
 }
