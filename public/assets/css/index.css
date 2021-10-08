@@ -1,0 +1,102 @@
+html,
+body {
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background: rgb(13, 7, 61);
+  background: -moz-linear-gradient(
+    309deg,
+    rgba(13, 7, 61, 1) 0%,
+    rgba(83, 75, 61, 1) 55%,
+    rgba(57, 50, 33, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    309deg,
+    rgba(13, 7, 61, 1) 0%,
+    rgba(83, 75, 61, 1) 55%,
+    rgba(57, 50, 33, 1) 100%
+  );
+  background: linear-gradient(
+    309deg,
+    rgba(13, 7, 61, 1) 0%,
+    rgba(83, 75, 61, 1) 55%,
+    rgba(57, 50, 33, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d073d",endColorstr="#393221",GradientType=1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.workspace {
+  width: 640px;
+}
+
+/*  workspace  > title-bar */
+
+.workspace .title-bar {
+  height: 30px;
+  border-radius: 8px 8px 0 0;
+  padding-top: 6px;
+  color: rgba(0, 0, 0, 0.8);
+  background: #c1bfc4;
+  font-size: 16px;
+  text-align: center;
+}
+
+.workspace .button-set {
+  height: 13px;
+  position: absolute;
+  padding: 3px 0 0 10px;
+}
+.workspace .button {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.close {
+  background: #e75448;
+}
+.minimize {
+  background: #ffde39;
+}
+.maximize {
+  background: #3bb662;
+}
+
+/*  workspace  > terminal */
+
+.workspace .terminal {
+  color: white;
+  padding: 5px;
+  background-color: black;
+  opacity: 0.75;
+  height: 300px;
+  font-family: monospace, Courier;
+  font-weight: 200;
+  font-size: 14px;
+  overflow-y: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  line-height: 1.5em;
+}
+.arrow {
+  color: #4cdd28;
+  font-size: 16px;
+}
+.path {
+  color: #e75448;
+  font-weight: 800;
+}
