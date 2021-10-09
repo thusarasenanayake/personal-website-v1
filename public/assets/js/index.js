@@ -6,6 +6,7 @@ const availableFiles = ['about', 'contact', 'resume'];
 
 const terminal = document.querySelector('.terminal');
 const workspace = document.querySelector('.workspace');
+
 let output, userInput;
 getElements();
 

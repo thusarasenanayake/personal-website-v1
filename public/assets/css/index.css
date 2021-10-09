@@ -123,11 +123,82 @@ td {
   color: rgb(251, 255, 0);
   text-decoration: none;
 }
+
+/*  mobile version */
+
+/* dash > lights */
+.led-set {
+  display: inline-block;
+}
+.led {
+  margin: 1px 0 1px 0;
+  display: inline-box;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+  animation: led 0.8s infinite;
+}
+.yellow {
+  background-color: #e4d01d;
+  animation: led 0.5s infinite;
+}
+.blue {
+  background-color: #0ccef0;
+  animation: led 1.2s infinite;
+}
+.red {
+  background-color: rgb(255, 136, 115);
+}
+/* dash > list */
+.dash ul {
+  margin: 0;
+  padding: 0;
+}
+.dash ul li {
+  list-style: none;
+  font-size: 1.4rem;
+  font-family: monospace;
+  padding: 4px 15px 4px 15px;
+  color: rgb(255, 241, 241);
+}
+.dash ul a {
+  text-decoration: none;
+  color: rgb(255, 241, 241);
+}
+.dash ul li:hover,
+.dash ul a:hover {
+  color: rgb(233, 127, 56);
+  cursor: pointer;
+}
+.dash ul li:active,
+.dash ul a:active {
+  color: rgb(126, 194, 17);
+  cursor: pointer;
+}
+
+.menu-item {
+  background: rgba(41, 37, 37, 0.678);
+  padding: 8px;
+  border-radius: 15px;
+}
+
+/* key frames */
 @keyframes typewriter {
   from {
     width: 0;
   }
   to {
     width: 40em;
+  }
+}
+
+@keyframes led {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
   }
 }
