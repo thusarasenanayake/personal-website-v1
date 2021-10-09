@@ -1,13 +1,15 @@
-const commands = ['echo'];
+const commands = {
+  clear,
+  help,
+  echo,
+};
 
 function clear() {
   terminal.innerHTML = '';
 }
 
-function help() {
-  terminal.append('There is no help... MUAHAHAHAHA. >:D\n');
-}
+function help() {}
 
 function echo(args) {
-  console.log(12);
+  output.textContent = args.join(' ');
 }
