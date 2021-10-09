@@ -1,5 +1,5 @@
 // ------ vars ------
-const partials = 'http://127.0.0.1:5501/public/assets/html';
+const partials = '../html';
 const availableFiles = ['about', 'contact', 'resume'];
 
 // ------ elements ------
@@ -63,7 +63,7 @@ function run() {
     }
   });
 
-  if (command === '' && values.length > 1) {
+  if (command === '' && values.length === 0) {
     return;
   } else if (Object.keys(commands).includes(command)) {
     commands[command](values);
