@@ -1,5 +1,5 @@
 // ------ vars ------
-const partials = '../html';
+const partials = '/public/assets/html';
 const availableFiles = ['about', 'contact', 'resume'];
 
 // ------ elements ------
@@ -52,13 +52,12 @@ function filterKeyCode(event) {
 function run() {
   let command;
   const values = [];
-
   // trimming command and values
   userInput.textContent.split(' ').forEach((value, index) => {
     if (index === 0) {
       command = value.trim();
     }
-    if (index !== 0 && value !== ' ') {
+    if (index !== 0 && value.trim() !== '') {
       values.push(value.trim());
     }
   });

@@ -7,11 +7,19 @@ const commands = {
   cat,
 };
 
-function clear() {
+function clear(args) {
+  if (args.length > 0) {
+    output.innerHTML = ` Invalid arguments`;
+    return;
+  }
   terminal.innerHTML = '';
 }
 
-function help() {
+function help(args) {
+  if (args.length > 0) {
+    output.innerHTML = ` Invalid arguments`;
+    return;
+  }
   const request = new XMLHttpRequest();
   request.open('GET', `${partials}/help.html`, false);
   request.send(null);
