@@ -1,6 +1,6 @@
 // ------ vars ------
-const commandHistory = [];
-const historyIndex = 0;
+const partials = 'http://127.0.0.1:5501/public/assets/html';
+const availableFiles = ['about', 'contact', 'resume'];
 
 // ------ elements ------
 
@@ -50,11 +50,26 @@ function filterKeyCode(event) {
 }
 
 function run() {
-  const command = userInput.textContent.split(' ')[0];
-  const values = userInput.textContent.split(' ').slice(1);
-  Object.keys(commands).includes(command)
-    ? commands[command](values)
-    : setError();
+  let command;
+  const values = [];
+
+  // trimming command and values
+  userInput.textContent.split(' ').forEach((value, index) => {
+    if (index === 0) {
+      command = value.trim();
+    }
+    if (index !== 0 && value !== ' ') {
+      values.push(value.trim());
+    }
+  });
+
+  if (command === '' && values.length > 1) {
+    return;
+  } else if (Object.keys(commands).includes(command)) {
+    commands[command](values);
+  } else {
+    setError();
+  }
 }
 
 function setError() {
