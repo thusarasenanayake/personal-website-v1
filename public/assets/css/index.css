@@ -75,6 +75,11 @@ body {
 .maximize {
   background: #3bb662;
 }
+.close:hover {
+  background-color: rgb(201, 74, 52);
+  padding: 5px;
+  outline: 1px solid rgb(201, 74, 52);
+}
 
 /*  workspace  > terminal */
 
@@ -138,8 +143,8 @@ td {
 .led {
   margin: 1px 0 1px 0;
   display: inline-box;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
   animation: led 0.8s infinite;
@@ -155,6 +160,7 @@ td {
 .red {
   background-color: rgb(255, 136, 115);
 }
+
 /* dash > list */
 
 .dash ul {
@@ -163,9 +169,9 @@ td {
 }
 .dash ul li {
   list-style: none;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-family: monospace;
-  padding: 4px 15px 4px 15px;
+  padding: 5px 15px 5px 15px;
   color: rgb(255, 241, 241);
 }
 .dash ul a {
@@ -185,7 +191,7 @@ td {
 
 .menu-item {
   background: rgba(41, 37, 37, 0.678);
-  padding: 8px;
+  padding: 12px;
   border-radius: 15px;
 }
 
