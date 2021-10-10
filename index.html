@@ -9,14 +9,14 @@
     <title>Thusara's website</title>
     <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location" />
     <link rel="stylesheet" href="./public/assets/css/index.css">
-    <!-- <script defer src="./public/assets/js/index.js"></script> -->
-    <script defer src="./public/assets/js/dash.js"></script>
+    <script defer src="./public/assets/js/init.js"></script>
+    <script defer src="./public/assets/js/index.js"></script>
     <script defer src="./public/assets/js/commands.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <!-- <div class="workspace">
+        <div class="workspace">
             <div class="title-bar">
                 <div class="button-set">
                     <div class="button close"></div>
@@ -30,13 +30,15 @@
                     <p class="welcome-msg">Hello there! Type `help` and press ⏎ to get started.</p>
                     <span class="arrow">➜ </span>
                     <span class="path">~</span>
-                    <span class="user-input" contenteditable="true"></span>
+                    <span class="input" contenteditable="true"></span>
                     <div>
                         <p class="output css-output"></p>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+
+        <!-- for mobile version -->
         <div class="dash menu-item">
             <div class="led-set">
                 <div class="red led"></div>
@@ -56,10 +58,10 @@
                     </div>
                 </li>
                 <li>
-                    <div class="menu-item"> send message</div>
+                    <div class="menu-item">send message</div>
                 </li>
                 <li>
-                    <div class="menu-item"> terminal</div>
+                    <div class="menu-item terminal-link">terminal</div>
                 </li>
                 <li>
                     <div class="menu-item"><a href="https://github.com/thusarasenanayake/thusarasenanayake.github.io"
@@ -68,8 +70,6 @@
             </ul>
         </div>
     </div>
-
-
 </body>
 
 </html>

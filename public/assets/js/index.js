@@ -1,22 +1,4 @@
-// ------ vars ------
-const partials = '/public/assets/html';
-const availableFiles = ['about', 'contact', 'resume'];
-
-// ------ elements ------
-
-const terminal = document.querySelector('.terminal');
-const workspace = document.querySelector('.workspace');
-
-let output, userInput;
-getElements();
-
 // ------ functions for UI ------
-
-function getElements() {
-  output = document.querySelector('.output');
-  userInput = document.querySelector('.user-input');
-  userInput.focus();
-}
 
 function createPrompt() {
   const newPrompt = document.createElement('div');
@@ -24,7 +6,7 @@ function createPrompt() {
 
   newPrompt.innerHTML = `<span class="arrow">➜ </span>
                         <span class="path">~</span>
-                        </span><span class="user-input" contenteditable="true"></span>
+                        </span><span class="input" contenteditable="true"></span>
                         <div>
                         <p class="output css-output"></p>
                         </div>`;
@@ -34,8 +16,8 @@ function createPrompt() {
 
 function deactivateCurrentPrompt() {
   output.classList.toggle('output');
-  userInput.setAttribute('contenteditable', false);
-  userInput.classList.toggle('user-input');
+  input.setAttribute('contenteditable', false);
+  input.classList.toggle('input');
 }
 
 // ------ functions for execution ------
@@ -49,12 +31,11 @@ function filterKeyCode(event) {
     getElements();
   }
 }
-
 function run() {
   let command;
   const values = [];
   // trimming command and values
-  userInput.textContent.split(' ').forEach((value, index) => {
+  input.textContent.split(' ').forEach((value, index) => {
     if (index === 0) {
       command = value.trim();
     }
@@ -83,5 +64,30 @@ terminal.addEventListener('keydown', (event) => {
 });
 
 terminal.addEventListener('click', () => {
-  userInput.focus();
+  input.focus();
+});
+
+closeBtn.addEventListener('click', () => {
+  dash.style.display = 'block';
+  workspace.style.display = 'none';
+});
+
+dash.addEventListener('click', (event) => {
+  if (event.target.textContent === 'about') {
+    dash.style.display = 'none';
+    terminal.innerHTML = aboutHTML;
+    workspace.style.display = 'block';
+  }
+  if (event.target.textContent === 'contact') {
+    dash.style.display = 'none';
+    terminal.innerHTML = contactHTML;
+    workspace.style.display = 'block';
+  }
+  if (event.target.textContent === 'terminal') {
+    terminal.innerHTML = '';
+    createPrompt();
+    getElements();
+    workspace.style.display = 'block';
+    dash.style.display = 'none';
+  }
 });

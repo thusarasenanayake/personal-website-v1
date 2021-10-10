@@ -20,21 +20,20 @@ function help(args) {
     output.innerHTML = ` Invalid arguments`;
     return;
   }
-  const request = new XMLHttpRequest();
-  request.open('GET', `${partials}/help.html`, false);
-  request.send(null);
-
-  if (request.status === 200) {
-    output.innerHTML = request.responseText;
-  } else {
-    output.innerHTML = ` An error occured`;
-  }
+  helpHTML
+    ? (output.innerHTML = helpHTML)
+    : (output.innerHTML = ` An error occured`);
 }
 
 function echo(args) {
   output.textContent = args.join(' ');
 }
-function exit() {
+function exit(args) {
+  if (args.length > 0) {
+    output.innerHTML = ` Invalid arguments`;
+    return;
+  }
+  dash.style.display = 'block';
   workspace.style.display = 'none';
 }
 function ls(args) {
@@ -42,28 +41,16 @@ function ls(args) {
     output.innerHTML = `No such directory`;
     return;
   }
-  const request = new XMLHttpRequest();
-  request.open('GET', `${partials}/ls.html`, false);
-  request.send(null);
-
-  if (request.status === 200) {
-    output.innerHTML = request.responseText;
-  } else {
-    output.innerHTML = `An error occured`;
-  }
+  lsHTML
+    ? (output.innerHTML = lsHTML)
+    : (output.innerHTML = ` An error occured`);
 }
 function cat(files) {
-  const request = new XMLHttpRequest();
   for (let file of files) {
     if (availableFiles.includes(file)) {
-      request.open('GET', `${partials + '/' + file}.html`, false);
-      request.send(null);
-
-      if (request.status === 200) {
-        output.innerHTML += request.responseText;
-      } else {
-        output.innerHTML += `An error occured`;
-      }
+      `${window[file + 'HTML']}`
+        ? (output.innerHTML += `${window[file + 'HTML']}`)
+        : (output.innerHTML = ` An error occured`);
     } else {
       output.innerHTML += `No such file or directory`;
     }
