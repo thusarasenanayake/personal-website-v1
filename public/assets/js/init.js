@@ -9,6 +9,9 @@ const workspace = document.querySelector('.workspace');
 const dash = document.querySelector('.dash');
 const terminal = document.querySelector('.terminal');
 const closeBtn = document.querySelector('.close');
+const messageCloseBtn = document.querySelector('.message-close');
+const messageBox = document.querySelector('.message-box');
+const contactForm = document.querySelector('#contact-form');
 
 let output, input;
 

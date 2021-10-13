@@ -19,6 +19,15 @@ function deactivateCurrentPrompt() {
   input.setAttribute('contenteditable', false);
   input.classList.toggle('input');
 }
+function closeMessageBox() {
+  messageBox.style.display = 'none';
+
+  if (screen.width > '470') {
+    workspace.style.display = 'block';
+  } else {
+    dash.style.display = 'block';
+  }
+}
 
 // ------ functions for execution ------
 
@@ -90,4 +99,25 @@ dash.addEventListener('click', (event) => {
     workspace.style.display = 'block';
     dash.style.display = 'none';
   }
+});
+
+messageCloseBtn.addEventListener('click', (event) => {
+  closeMessageBox();
+});
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const name = contactForm['form-name'].value;
+  const email = contactForm['form-email'].value;
+  const subject = contactForm['form-subject'].value;
+  const message = contactForm['form-msg'].value;
+
+  sendMessage(name, email, subject, message)
+    .then(() => {
+      closeMessageBox();
+      contactForm.reset();
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
 });

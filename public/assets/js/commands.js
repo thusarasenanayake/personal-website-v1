@@ -5,6 +5,7 @@ const commands = {
   exit,
   ls,
   cat,
+  message,
 };
 
 function clear(args) {
@@ -55,4 +56,13 @@ function cat(files) {
       output.innerHTML += `No such file or directory`;
     }
   }
+}
+function message(args) {
+  if (args[0] === 'open' || args.length === 0) {
+    messageBox.style.display = 'block';
+    workspace.style.display = 'none';
+    dash.style.display = 'none';
+    return;
+  }
+  output.innerHTML = ` Invalid arguments`;
 }

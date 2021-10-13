@@ -1,7 +1,7 @@
 html,
 body {
   overflow: hidden;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace, 'Courier New', Courier;
 }
 
 body {
@@ -44,7 +44,7 @@ body {
 
 /*  workspace  > title-bar */
 
-.workspace .title-bar {
+.title-bar {
   height: 30px;
   border-radius: 8px 8px 0 0;
   padding-top: 6px;
@@ -52,14 +52,15 @@ body {
   background: #c1bfc4;
   font-size: 16px;
   text-align: center;
+  font-family: 'Courier New', Courier;
 }
 
-.workspace .button-set {
+.button-set {
   height: 13px;
   position: absolute;
   padding: 3px 0 0 10px;
 }
-.workspace .button {
+.button {
   width: 13px;
   height: 13px;
   display: inline-block;
@@ -89,7 +90,6 @@ body {
   background-color: black;
   opacity: 0.75;
   height: 350px;
-  font-family: monospace, Courier;
   font-weight: 200;
   font-size: 14px;
   overflow-y: auto;
@@ -170,7 +170,6 @@ td {
 .dash ul li {
   list-style: none;
   font-size: 1.7rem;
-  font-family: monospace;
   padding: 5px 15px 5px 15px;
   color: rgb(255, 241, 241);
 }
@@ -195,7 +194,75 @@ td {
   border-radius: 15px;
 }
 
-/* key frames */
+/* contact form */
+
+.message-close {
+  background: #e75448;
+}
+.message-close:hover {
+  background-color: rgb(201, 74, 52);
+  padding: 5px;
+  outline: 1px solid rgb(201, 74, 52);
+}
+
+.message-box {
+  display: none;
+  max-width: 400px;
+}
+
+#contact-form {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #13110d;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#contact-form > input,
+#contact-form > textarea {
+  margin: 6px 0;
+  padding: 8px;
+  background-color: #70787242;
+  border: none;
+  outline: none;
+  color: rgb(182, 170, 170);
+  resize: none;
+  font-family: monospace, 'Courier New', Courier;
+}
+#form-submit {
+  padding: 12px !important;
+}
+#form-submit:hover {
+  color: #00000088;
+  background-color: #c3c3ced5;
+}
+
+::placeholder {
+  color: rgb(110, 106, 106);
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: rgb(110, 106, 106);
+}
+
+::-ms-input-placeholder {
+  color: rgb(110, 106, 106);
+}
+textarea::-webkit-scrollbar {
+  width: 0.9em;
+}
+
+textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 5px 0 10px rgba(71, 68, 68, 0.9);
+  box-shadow: #484649;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgb(2, 1, 1);
+  outline: 1px solid rgb(89, 91, 92);
+}
 
 @keyframes typewriter {
   from {

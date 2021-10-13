@@ -12,6 +12,11 @@
     <script defer src="./public/assets/js/init.js"></script>
     <script defer src="./public/assets/js/index.js"></script>
     <script defer src="./public/assets/js/commands.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script defer src="./public/assets/js/database.js"></script>
+
 </head>
 
 <body>
@@ -38,6 +43,23 @@
             </div>
         </div>
 
+        <!-- for message box -->
+        <div class="message-box">
+            <div class="title-bar">
+                <div class="button-set">
+                    <div class="button message-close"></div>
+                </div>
+                <span class="title">message box</span>
+            </div>
+            <form method="get" id="contact-form">
+                <input type="text" placeholder="Name" id="form-name">
+                <input type="email" placeholder="Email" id="form-email">
+                <input type="text" placeholder="Subject" id="form-subject">
+                <textarea rows="8" placeholder="Message" id="form-msg"></textarea>
+                <input type="submit" class="btn" value="Send message → " id="form-submit">
+            </form>
+        </div>
+
         <!-- for mobile version -->
         <div class="dash menu-item">
             <div class="led-set">
@@ -58,7 +80,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="menu-item">send message</div>
+                    <div class="menu-item" onclick="message(['open'])">send message</div>
                 </li>
                 <li>
                     <div class="menu-item terminal-link">terminal</div>
