@@ -5,7 +5,7 @@
   <h3 align="center">My personal website v1</h3>
 
   <p align="center">
-    <a href="thusarasenanayake.github.io">View Demo</a>
+    <a href="https://thusarasenanayake.github.io">View Demo</a>
     ·
     <a href="https://github.com/thusarasenanayake/personal-website-v1/issues">Report Bug</a>
   </p>

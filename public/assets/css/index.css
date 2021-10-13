@@ -237,6 +237,10 @@ td {
   color: #00000088;
   background-color: #c3c3ced5;
 }
+#form-submit:active {
+  color: #00000088;
+  background-color: #b0f89bd5;
+}
 
 ::placeholder {
   color: rgb(110, 106, 106);
