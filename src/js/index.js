@@ -1,4 +1,49 @@
+import '../css/index.css';
+import { commands } from './commands';
+import { sendMessage } from './database';
+
+const partials = '/public/assets/html';
+
+// ------ elements ------
+const workspace = document.querySelector('.workspace');
+const dash = document.querySelector('.dash');
+const terminal = document.querySelector('.terminal');
+const closeBtn = document.querySelector('.close');
+const messageCloseBtn = document.querySelector('.message-close');
+const messageBox = document.querySelector('.message-box');
+const messageLink = document.querySelector('#message-link');
+const contactForm = document.querySelector('#contact-form');
+let output, input;
+export let terminalHTML, aboutHTML, contactHTML, lsHTML, resumeHTML, helpHTML;
+
+fetch(`${partials}/terminal.html`).then((data) => {
+  data.text().then((text) => (terminalHTML = text));
+});
+fetch(`${partials}/about.html`).then((data) => {
+  data.text().then((text) => (aboutHTML = text));
+});
+fetch(`${partials}/contact.html`).then((data) => {
+  data.text().then((text) => (contactHTML = text));
+});
+fetch(`${partials}/ls.html`).then((data) => {
+  data.text().then((text) => (lsHTML = text));
+});
+fetch(`${partials}/resume.html`).then((data) => {
+  data.text().then((text) => (resumeHTML = text));
+});
+fetch(`${partials}/help.html`).then((data) => {
+  data.text().then((text) => (helpHTML = text));
+});
+
+getElements();
+
 // ------ functions for UI ------
+
+function getElements() {
+  output = document.querySelector('.output');
+  input = document.querySelector('.input');
+  input.focus();
+}
 
 function createPrompt() {
   const newPrompt = document.createElement('div');
@@ -101,7 +146,7 @@ dash.addEventListener('click', (event) => {
   }
 });
 
-messageCloseBtn.addEventListener('click', (event) => {
+messageCloseBtn.addEventListener('click', () => {
   closeMessageBox();
 });
 
@@ -121,3 +166,8 @@ contactForm.addEventListener('submit', (event) => {
       console.error('Error adding document: ', error);
     });
 });
+messageLink.addEventListener('click', () => {
+  commands.message(['open']);
+});
+
+export { output, input, dash, workspace, messageBox, terminal };

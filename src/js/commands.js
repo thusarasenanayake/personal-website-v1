@@ -1,13 +1,15 @@
-const commands = {
-  clear,
-  help,
-  echo,
-  exit,
-  ls,
-  cat,
-  message,
-};
-
+import {
+  output,
+  dash,
+  workspace,
+  messageBox,
+  terminal,
+  helpHTML,
+  resumeHTML,
+  aboutHTML,
+  contactHTML,
+  lsHTML,
+} from './index.js';
 function clear(args) {
   if (args.length > 0) {
     output.innerHTML = ` Invalid arguments`;
@@ -48,10 +50,12 @@ function ls(args) {
 }
 function cat(files) {
   for (let file of files) {
-    if (availableFiles.includes(file)) {
-      `${window[file + 'HTML']}`
-        ? (output.innerHTML += `${window[file + 'HTML']}`)
-        : (output.innerHTML = ` An error occured`);
+    if (file === 'about') {
+      output.innerHTML += aboutHTML;
+    } else if (file === 'contact') {
+      output.innerHTML += contactHTML;
+    } else if (file === 'resume') {
+      output.innerHTML += resumeHTML;
     } else {
       output.innerHTML += `No such file or directory`;
     }
@@ -66,3 +70,12 @@ function message(args) {
   }
   output.innerHTML = ` Invalid arguments`;
 }
+export const commands = {
+  clear,
+  help,
+  echo,
+  exit,
+  ls,
+  cat,
+  message,
+};
