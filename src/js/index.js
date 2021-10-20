@@ -39,6 +39,9 @@ getElements();
 
 // ------ functions for UI ------
 
+document.querySelector('.container').style.display = 'flex';
+document.querySelector('.loader-container').style.display = 'none';
+
 function getElements() {
   output = document.querySelector('.output');
   input = document.querySelector('.input');
