@@ -117,3 +117,4 @@ out
 # temp
 temp/
 private/
+dist/
