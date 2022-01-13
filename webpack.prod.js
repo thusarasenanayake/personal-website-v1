@@ -16,6 +16,16 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
         test: /\.scss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
@@ -24,6 +34,9 @@ module.exports = merge(common, {
         use: [MiniCssExtractPlugin.loader, 'css-loader'], // order matters
       },
     ],
+  },
+  resolve: {
+    extensions: ['*', '.js'],
   },
 
   plugins: [
