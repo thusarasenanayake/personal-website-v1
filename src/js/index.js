@@ -1,8 +1,12 @@
 import '../css/index.css';
 import { commands } from './commands';
 import { sendMessage } from './database';
-
-const partials = '/public/assets/html';
+import aboutMD from '../md/about.md';
+import terminalMD from '../md/terminal.md';
+import contactMD from '../md/contact.md';
+import lsMD from '../md/ls.md';
+import resumeMD from '../md/resume.md';
+import helpMD from '../md/help.md';
 
 // ------ elements ------
 const workspace = document.querySelector('.workspace');
@@ -16,22 +20,22 @@ const contactForm = document.querySelector('#contact-form');
 let output, input;
 export let terminalHTML, aboutHTML, contactHTML, lsHTML, resumeHTML, helpHTML;
 
-fetch(`${partials}/terminal.html`).then((data) => {
+fetch(terminalMD).then((data) => {
   data.text().then((text) => (terminalHTML = text));
 });
-fetch(`${partials}/about.html`).then((data) => {
+fetch(aboutMD).then((data) => {
   data.text().then((text) => (aboutHTML = text));
 });
-fetch(`${partials}/contact.html`).then((data) => {
+fetch(contactMD).then((data) => {
   data.text().then((text) => (contactHTML = text));
 });
-fetch(`${partials}/ls.html`).then((data) => {
+fetch(lsMD).then((data) => {
   data.text().then((text) => (lsHTML = text));
 });
-fetch(`${partials}/resume.html`).then((data) => {
+fetch(resumeMD).then((data) => {
   data.text().then((text) => (resumeHTML = text));
 });
-fetch(`${partials}/help.html`).then((data) => {
+fetch(helpMD).then((data) => {
   data.text().then((text) => (helpHTML = text));
 });
 
