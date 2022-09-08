@@ -1,7 +1,5 @@
 <p>
 <ul>
-    <li>Personal e-mail: <em><a class="link" href="mailto:thusarasenanayake.dev@gmail.com"
-                target="_blank">thusarasenanayake.dev@gmail.com</a></em></li>
     <li>Website: <em><a class="link" href="https://www.thusarasenanayake.website"
                 target="_blank">www.thusarasenanayake.website</a></em></li>
 
